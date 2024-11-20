@@ -9,9 +9,10 @@ interface FetchGamesResponse {
 }
 
   // From Rawg Game API Endpoint
-interface Game {
+export interface Game {
     id: string;
     name: string;
+    background_image: string;
 }
 
 const useGames = () => {
