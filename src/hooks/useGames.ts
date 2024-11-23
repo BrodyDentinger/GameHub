@@ -8,22 +8,26 @@ interface FetchGamesResponse {
     results: Game[];
 }
 
-  // From Rawg Game API Endpoint
+export interface Platform {
+    id: number;
+    name: string;
+    slug: string;
+}
+
+// From Rawg Game API Endpoint
 export interface Game {
     id: string;
     name: string;
     background_image: string;
+    parent_platforms: {platform: Platform}[];
 }
 
 const useGames = () => {
-
-    
 
     const [games, setGames] = useState<Game[]>([]);
     const [error, setError] = useState('');
   
     useEffect(() => {
-
       const controller = new AbortController();
 
       apiClient
