@@ -1,5 +1,6 @@
 const getCroppedImageUrl = (url : string) => {
 
+    if(!url) return '';
     // get all the characters in the url from the beginning to the end of the media parameter
     const target = 'media/';
     const index = url.indexOf(target) + target.length;
