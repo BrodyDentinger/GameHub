@@ -19,8 +19,10 @@ interface Props {
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
+  // Currently using static data for genres, refactored from using an API request. Keeping this here in case we want to switch back to API request
   if (error) return null;
   if (isLoading) return <Spinner />;
+
   return (
     <>
       <Heading fontSize="2xl" marginBottom={3}>
